@@ -1,0 +1,10 @@
+Django==5.0.7
+sqlparse==0.5.0
+requests
+djangorestframework
+python-dotenv
+psycopg[binary]
+uuid
+boto3
+django-storages
+Pillow
