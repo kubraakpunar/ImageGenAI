@@ -53,7 +53,9 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
-    "storages"
+    "storages",
+    "django_celery_beat",
+    "django_celery_results",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -146,6 +148,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "image_generator.User"
+
+# Celery Ayarları
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_BROKER_URL= os.getenv("CELERY_BROKER_REDIS_URL", default="redis://localhost:6379")
+CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers.DatabaseScheduler"
+
 
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
