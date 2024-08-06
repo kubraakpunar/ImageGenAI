@@ -66,7 +66,7 @@ class MidjourneyApi:
             "Content-Type": "application/json",
         }
         for i in range(5):
-            time.sleep(15)
+            time.sleep(20)
             try:
                 response = requests.get(f'https://discord.com/api/v9/channels/{self.channel_id}/messages', headers=headers)
                 if response.status_code != 200:
