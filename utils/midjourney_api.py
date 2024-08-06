@@ -20,8 +20,8 @@ class MidjourneyApi:
         self.image_path_str = ""
 
         self.send_message()
-        self.get_message()
-        self.choose_images()
+        self.wait_message()
+        self.get_image()
         self.download_image()
 
     def send_message(self):
@@ -59,7 +59,7 @@ class MidjourneyApi:
             raise Exception(f"Failed to send message: {response.status_code} {response.text}")
         else:
             print("Message sent successfully.")
-    def get_message(self):
+    def wait_message(self):
         headers = {
             'Authorization': self.authorization,
             "Content-Type": "application/json",
@@ -87,7 +87,7 @@ class MidjourneyApi:
                 if i == 4:
                     raise ValueError("Timeout")
 
-    def choose_images(self):
+    def get_image(self):
         url = "https://discord.com/api/v9/interactions"
         headers = {
             "Authorization": self.authorization,

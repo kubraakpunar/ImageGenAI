@@ -149,12 +149,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "image_generator.User"
 
-# Celery Ayarları
+# Celery 
 CELERY_RESULT_BACKEND = "django-db"
 CELERY_BROKER_URL= os.getenv("CELERY_BROKER_REDIS_URL", default="redis://localhost:6379")
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers.DatabaseScheduler"
 
-
+#AWS S3
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
