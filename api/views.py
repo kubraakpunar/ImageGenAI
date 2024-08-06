@@ -13,7 +13,12 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         user_profile = serializer.save()
-        text_prompt = os.getenv("text_prompt")
+        text_prompt1 = os.getenv("prompt_part1")
+        text_prompt2 = os.getenv("prompt_part2")
+        text_prompt3 = os.getenv("prompt_part3")
+        
+        full_prompt = f"{text_prompt1} {text_prompt2} {text_prompt3}"
+
         original_photo_file = user_profile.original_photo.file
         original_photo_name = user_profile.original_photo.name
         content_type, _ = mimetypes.guess_type(original_photo_name)
@@ -27,4 +32,4 @@ class UserViewSet(viewsets.ModelViewSet):
             ExtraArgs={'ContentType': content_type}
         )
 
-        process_user_photo.delay(user_profile.id, text_prompt, original_photo_name)
+        process_user_photo.delay(user_profile.id, full_prompt, original_photo_name)
