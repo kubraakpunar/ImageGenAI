@@ -59,14 +59,14 @@ class MidjourneyApi:
             raise Exception(f"Failed to send message: {response.status_code} {response.text}")
         else:
             print("Message sent successfully.")
-            
+
     def wait_message(self):
         headers = {
             'Authorization': self.authorization,
             "Content-Type": "application/json",
         }
         for i in range(5):
-            time.sleep(60)
+            time.sleep(15)
             try:
                 response = requests.get(f'https://discord.com/api/v9/channels/{self.channel_id}/messages', headers=headers)
                 if response.status_code != 200:
