@@ -59,6 +59,7 @@ class MidjourneyApi:
             raise Exception(f"Failed to send message: {response.status_code} {response.text}")
         else:
             print("Message sent successfully.")
+            
     def wait_message(self):
         headers = {
             'Authorization': self.authorization,
