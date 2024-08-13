@@ -62,6 +62,16 @@ celery -A your_project_name worker --loglevel=info
   • Uploading a Photo: Users can upload a photo, which will be sent to the MidJourney API for transformation.  <br>
   • Processing: The app processes the photo asynchronously, storing the result in AWS S3.  <br>
   • Retrieval: Users can retrieve and view both the original and AI-generated images.  <br>
+  
+
+<p align="center">
+  <img src="https://cdn.baykartech.com/media/images/contents/baykar.png" alt="Logo" width="200" height="200" style="margin-right: 40px;">
+  <img src="https://valasys.com/wp-content/uploads/2023/07/What-Is-Midjourney-AI-and-How-Does-It-Work-1.jpg" alt="" width="300" height="200">
+</p>
+
+
+
+
 
   
 
