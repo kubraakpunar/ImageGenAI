@@ -2,7 +2,7 @@
 
 This mobile application leverages the power of AI to turn your special moments into unforgettable, high-quality images. Built with Django, the app integrates MidJourney AI for creative image generation and provides a seamless experience through a robust backend.
 
-## Features: 
+## Features
 
  • **AI-Powered Image Generation:** Transform user-uploaded photos into stunning, creative images using MidJourney AI. <br>
  • **Asynchronous Processing:** Utilize Celery with Redis to handle long-running tasks, ensuring a smooth user experience.  <br>
