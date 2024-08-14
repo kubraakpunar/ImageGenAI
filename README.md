@@ -55,10 +55,10 @@ py manage.py runserver
 ```
 Start Celery workers:
 ```
-celery -A your_project_name worker --loglevel=info
+celery -A ImageGenAI worker --loglevel=info
 
 #for windows
-celery -A nexus worker -l info  --pool=solo
+celery -A ImageGenAI worker -l info  --pool=solo
 ```
 
 ## Usage
