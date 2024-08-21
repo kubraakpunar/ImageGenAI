@@ -16,8 +16,9 @@ class UserViewSet(viewsets.ModelViewSet):
         text_prompt1 = os.getenv("prompt_part1")
         text_prompt2 = os.getenv("prompt_part2")
         text_prompt3 = os.getenv("prompt_part3")
+        text_prompt4 = os.getenv("prompt_part4")
         
-        full_prompt = f"{text_prompt1} {text_prompt2} {text_prompt3}"
+        full_prompt = f"{text_prompt1} {text_prompt2} {text_prompt3} {text_prompt4}"
 
         original_photo_file = user_profile.original_photo.file
         original_photo_name = user_profile.original_photo.name
