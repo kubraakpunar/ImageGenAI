@@ -10,13 +10,7 @@ class PhotoService():
         user_profile = User.objects.get(id=user_id)
         original_photo_url = f'https://{settings.AWS_S3_CUSTOM_DOMAIN}/{original_photo_name}'
 
-        static_photo_urls = [
-            "https://s.mj.run/Rcl6Mywgr9Q",
-            "https://s.mj.run/hUuvXeJ5ksg",
-            "https://s.mj.run/mml89sSmuCM"
-        ]
-
-        full_prompt = f"{original_photo_url} {prompt} {' '.join(static_photo_urls)}"
+        full_prompt = f"{original_photo_url} {prompt}"
 
         midjourney = MidjourneyApi(
             prompt=full_prompt,
