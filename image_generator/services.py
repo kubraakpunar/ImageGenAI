@@ -9,8 +9,9 @@ class PhotoService():
     def process_user_photo_service(user_id, prompt, original_photo_name):
         user_profile = User.objects.get(id=user_id)
         original_photo_url = f'https://{settings.AWS_S3_CUSTOM_DOMAIN}/{original_photo_name}'
+        update_prompt = f" --cref {original_photo_url} --cw 40 --sref https://s.mj.run/aQjzCGNBaIw https://s.mj.run/mml89sSmuCM --sw 50"
 
-        full_prompt = f"{original_photo_url} {prompt}"
+        full_prompt = f"{prompt} {update_prompt}"
 
         midjourney = MidjourneyApi(
             prompt=full_prompt,
