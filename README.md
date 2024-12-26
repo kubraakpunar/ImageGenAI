@@ -68,7 +68,6 @@ celery -A ImageGenAI worker -l info  --pool=solo
   
 
 <p align="center">
-  <img src="https://cdn.baykartech.com/media/images/contents/baykar.png" alt="Logo" width="200" height="200" style="margin-right: 40px;">
   <img src="https://valasys.com/wp-content/uploads/2023/07/What-Is-Midjourney-AI-and-How-Does-It-Work-1.jpg" alt="" width="300" height="200">
 </p>
 
